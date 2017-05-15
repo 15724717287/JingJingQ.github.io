@@ -1,0 +1,70 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style:none;
+}
+html,body{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.sence{
+	width: 600px;
+	height: 600px;
+	border: 1px solid #000;
+	position: absolute;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+.gezi{
+	width: 30px;
+	height: 30px;
+	float: left;
+	background-color: #fff;
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+	box-sizing:border-box;
+}
+.gezi:nth-child(20n){
+	border-right: 0;
+}
+.gezi:nth-child(380)~.gezi{
+	border-bottom: 0;
+}
+.she{
+	background-color: green;
+}
+.food{
+	background-color: orange;
+}
+.fenshu{
+	position: fixed;
+	right: 50%;
+	margin-right: -600px;
+	width: 200px;
+	height: 300px;
+	border: 1px solid #000;
+	top:100px;
+}
+.fenshu .zuigaofen span{
+	color: orange;
+}
+.fenshu .defen span{
+	color: orange;
+}
+.start1{
+	position: fixed;
+	left: 280px;
+	top:16px;
+	width: 80px;
+	height: 30px;
+	border: 1px solid #000;
+	color: #000;
+	font-size: 12px;
+	text-align: center;
+	line-height: 30px;
+	cursor: pointer;
+}

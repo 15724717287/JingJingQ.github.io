@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding:0;
+            margin: 0;
+            user-select: none;//不被选中
+        }
+        body,html{
+            height: 100%;
+            overflow: hidden;
+        }
+        .scene{
+            width: 1000px;
+            height: 100%;
+            background-color: #ccc;
+            margin: 0 auto;
+            background-image: url("img/bei.jpg");
+            background-repeat: no-repeat;
+            /*background-position: center;*/
+            background-size: cover;
+            position: relative;
+        }
+        .main{
+            width: 800px;height: 100%;
+            float: left;
+            /*background-color: #2ecc71;*/
+
+            position: relative;
+        }
+        .control{
+            width: 200px;height: 100%;
+            /*background-color: #25b2fe;*/
+            /*background-image: url("img/bei2.jpg");*/
+            /*background-size: cover;*/
+            float: left;
+
+        }
+        .box{
+            width:80%;height: 50px;
+            margin: 40px auto;
+            /*background-color: #fff;*/
+            border-radius: 10px;
+
+        }
+        .box .name{
+            height: 20px;
+            text-align: center;
+            line-height:1px;
+            font-size: 20px;
+        }
+        .box .score,.state,.life,.maxscore{
+            width:80%;
+            height:30px;
+            /*background-color: #ffa9c5;*/
+            margin: 0 auto;
+            text-align: center;
+            line-height:30px;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 800;
+        }
+        .letter{
+            width:80px;height:80px;
+            /*border: 1px solid #000;*/
+            background-image: url("img/1.png");
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: contain;
+            font-size: 30px;
+            font-weight: 700;
+            text-align: center;
+            line-height:85px;
+            position: absolute;
+
+        }
+        .btn{
+            margin-top: 10px;
+        }
+        .scor{
+            background-image: url("img/scor.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+        .lifeimg{
+            background-image: url("img/life.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+        .lifeimg .life{
+            line-height: 19px;
+            color: #000!important;
+        }
+        .play{
+            background-image: url("img/start.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            width: 140px;
+            height: 40px;
+            transition: all 1s;
+        }
+        .play:hover{
+            transform: scale(1.1);
+        }
+        .btn1:hover{
+            transform: scale(1.1);
+        }
+        .btn1{
+            background-image: url("img/stop.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            width: 65px;
+            height:65px;
+            transition: all 1s;
+        }
+        .paihang{
+            width:175px;
+            height: 217px;
+            border:1px solid #000;
+            position: absolute;
+            top:53px;
+            right:-175px;
+        }
+        .paihang p{
+            float: left;
+            margin-right:15px;
+            margin-left:10px;
+            margin-top:20px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="scene">
+    <div class="main">
+    </div>
+    <div class="control">
+        <div class="box scor"  >
+            <div class="name">得分</div>
+            <div class="score">0</div>
+        </div>
+        <div class="box scor">
+            <div class="name">最高分</div>
+            <div class="maxscore">0</div>
+        </div>
+        <div class="box scor">
+            <div class="name">关卡</div>
+            <div class="state">1</div>
+        </div>
+        <div class="box lifeimg">
+            <div class="name">生命值</div>
+            <div class="life">5</div>
+        </div>
+
+        <!--<div class="box">-->
+            <!--<div class="name">生命值</div>-->
+            <div class="life btn btn1" style="cursor: pointer"></div>
+            <div class="life btn play" style="cursor: pointer"></div>
+        <!--</div>-->
+        <div class="paihang">
+            <p></p>
+            <p></p>
+            <p></p>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+
+    <!--面向过程-->
+//    <!--创建字母-->
+//    var main=document.querySelector(".main");
+//    var num=5;
+//    var obj={};
+//    function createLetter() {
+////        创建一个新的div，用来放字母
+//        var div=document.createElement("div");
+//        div.className="letter";
+////        确保字母不重复
+//        do{
+////        取一个65到91之间的随机数
+//        var rn = Math.floor(Math.random()*26+65);
+////        把这个随机数转化成字母A-Z
+//        var le = String.fromCharCode(rn);
+//        }while(obj[le]);
+////        obj[le]=true;
+////        添加到新创建的盒子当中
+//        div.innerHTML=le;
+////        确保位置不重复
+//        do{
+////        让这个盒子左右位置随机（800-80）
+//        var rl=Math.random()*720;
+//        }while(check(rl));
+//        div.style.left=rl+"px";
+////        让这个盒子上下位置随机
+//        var rt=-Math.random()*100;
+//        div.style.top=rt+"px";
+//        obj[le]={left:rl,top:rt,el:div};
+////        把创建的盒子放在mian中
+//        main.appendChild(div);
+//    }
+////    调用函数
+////    createLetter();
+//    function play() {
+//        for(let i=0;i<num;i++){
+//            createLetter();
+//        }
+//    }
+////    检查位置是否重叠
+//    function check(left) {
+//        for(var i in obj){
+//            if(obj[i].left-80<left&&left<obj[i].left+80){
+//                return true;
+//            }
+//        }
+//    }
+//    play();
+////让字母往下移
+//    setInterval(function () {
+//        for(var i in obj){
+//            var t=obj[i].top;
+//            t+=3;
+//            obj[i].top=t;
+//            obj[i].el.style.top=t+"px";
+//        }
+//    },50)
+//
+//    document.onkeydown=function(e){
+////        获取键盘按下的键的键盘码
+//        var keycode=e.keyCode;
+//        var l=String.fromCharCode(keycode);
+////        判断如果当前已经有这个字母，则删除
+//        if(obj[l]){
+////            从页面里删除
+//            main.removeChild(obj[l].el);
+////            从属性里移除
+//            delete obj[l];
+////            创建一个新的字母
+//            createLetter();
+//        }
+//    }
+
+
+
+
+//    面向对象
+
+
+//  获取元素
+    var btn=document.querySelector(".btn1");
+    var score=document.querySelector(".score");
+    var play=document.querySelector(".play");
+    var state=document.querySelector(".state");
+    var lifeele=document.querySelector(".life");
+    var maxscore=document.querySelector(".maxscore");
+    var paihang=document.querySelectorAll(".paihang p");
+//  创建一个类
+    class Game {
+//      类的属性
+        constructor(main, btn, score, state, life, maxscore, paihang) {
+            this.main = main;
+            this.num = 3;
+            this.obj = {};
+            this.btn = btn;
+//            得分
+            this.score = score;
+            this.fenshu = 0;
+//            关卡
+            this.state = state;
+            this.stateele = 1;
+            this.speed = 5;
+//            生命值
+            this.lifeele = life;
+            this.life = 5;
+//            最高分
+            this.maxscore = maxscore;
+            this.height = window.innerHeight;
+            this.palycontrol = true;
+            this.paihang = paihang;
+        }
+
+//        创建字母的方法
+        _createLetter() {
+            var div = document.createElement("div");
+            div.className = "letter";
+            do {
+                var rn = Math.floor(Math.random() * 26 + 65);
+                var le = String.fromCharCode(rn);
+            } while (this.obj[le]);
+            div.innerHTML = le;
+            do {
+                var rl = Math.random() * 720;
+            } while (this._check(rl));
+            var rt = -Math.random() * 100;
+            div.style.left = rl + "px";
+            div.style.top = rt + "px";
+            this.obj[le] = {left: rl, top: rt, el: div};
+            this.main.appendChild(div);
+        }
+
+//        判断是否重合的方法
+        _check(left) {
+            for (var i in this.obj) {
+                if (left > this.obj[i].left - 80 && left < this.obj[i].left + 80) {
+                    return true;
+                }
+            }
+        }
+
+//        开始方法
+        start() {
+//            记录最高分
+            if(Number(localStorage.maxscore)){
+                this.maxscore.innerHTML=localStorage.maxscore;
+                this.maxfen=localStorage.maxscore;
+            }else{
+                this.maxfen=0;
+                this.maxscore.innerHTML=this.maxfen;
+            }
+//            开始之后让开关关闭
+            this.palycontrol = false;
+            for (var i = 0; i < this.num; i++) {
+                this._createLetter();
+            }
+            this.flag = true;
+            this._move();
+            this._keydown();
+            this._pause();
+            this.bestscor=localStorage.bestscor?JSON.parse(localStorage.bestscor):[];
+
+
+            for(let i=0;i<this.bestscor.length;i++){
+                this.paihang[i].innerHTML=`玩家:${this.bestscor[i].player}得分:${this.bestscor[i].score}`;
+            }
+
+
+        }
+
+//        移动方法
+            _move(){
+                this.t = setInterval(function () {
+                    for (let i in this.obj) {
+                        var s = this.obj[i].top;
+                        s += this.speed;
+                        this.obj[i].top = s;
+                        this.obj[i].el.style.top = s + "px";
+                        if (s >= this.height) {
+                            this.life--;
+                            this.lifeele.innerHTML = this.life;
+                            this.main.removeChild(this.obj[i].el);
+                            delete this.obj[i];
+                            this._createLetter();
+                            if (this.life == 0) {
+                                this.lifeele.innerHTML = this.life;
+                                this._gameover();
+                                return;  //终止函数运行
+                            }
+                        }
+                    }
+                }.bind(this), 50)
+            }
+//        键盘按下的方法
+            _keydown() {
+                document.onkeydown = function (e) {
+                    var keycode = e.keyCode;
+                    var le = String.fromCharCode(keycode);
+                    if (this.obj[le]) {
+                        this.main.removeChild(this.obj[le].el);
+                        delete this.obj[le];
+                        this._createLetter();
+                        this._changescore();
+                        if (this.fenshu % 10 == 0) {
+                            this._upstate();
+                        }
+                    }
+                }.bind(this)
+            }
+//       开始暂停的方法
+            _pause() {
+                let that = this;
+                this.btn.onclick = function () {
+                    document.onkeydown = null;
+                    if (that.flag) {
+                        that.flag = false;
+                        clearInterval(that.t);
+//                    that.btn.innerHTML="继续";
+                        that.btn.style.backgroundImage = "url('img/continue.png')";
+                    } else {
+
+                        that.flag = true;
+//                    that.btn.innerHTML="暂停";
+                        that.btn.style.backgroundImage = "url('img/stop.png')";
+                        that._move();
+                        that._keydown();
+                    }
+                }
+            }
+//        关卡
+            _upstate() {
+                this.stateele++;
+                this.state.innerHTML = this.stateele;
+                if (this.stateele <= 4) {
+                    this._createLetter();
+                } else {
+                    this.speed++;
+                }
+            }
+//        分数改变的方法
+            _changescore() {
+                this.fenshu++;
+                this.score.innerHTML = this.fenshu;
+                if (this.maxfen < this.fenshu) {
+                    this.maxfen = this.fenshu;
+                    this.maxscore.innerHTML = this.fenshu;
+                    localStorage.maxscore = this.maxfen;
+                }
+            }
+//        游戏结束的方法
+            _gameover() {
+                this.palycontrol = true;
+                alert(`游戏结束:得分为${this.fenshu}!`);
+
+                if (this.bestscor.length < 3 || (this.bestscor.length >= 3 && this.fenshu > parseInt(this.bestscor[2].score))) {
+                    var player = prompt("请输入姓名");
+                    this.bestscor.push({player,score: this.fenshu});
+                    this.bestscor.sort(function (a, b) {
+                        if (parseInt(a.score) >parseInt(b.score )) {
+                            return -1;
+
+                        } else {
+                            return 1;
+                        }
+                    })
+
+                    if (this.bestscor.length > 3) {
+                        this.bestscor.pop();
+                    }
+                    localStorage.bestscor = JSON.stringify(this.bestscor);
+                }
+                if(!this.bestscor){
+                    return;
+                }else{
+                    this.maxscore.innerHTML=this.bestscor[0].score;
+                }
+//        this.maxscores.innerHTML=this.bestscor[0].scor;
+                for(let i=0;i<this.bestscor.length;i++){
+                    this.paihang[i].innerHTML=`玩家:${this.bestscor[i].player}  得分:${this.bestscor[i].score}`;
+                }
+
+                this.main.innerHTML = "";
+                this.obj = {};
+                this.speed = 5;
+                this.fenshu = 0;
+                this.score.innerHTML = 0;
+                this.life = 5;
+                this.lifeele.innerHTML = 5;
+                this.stateele = 1;
+                this.state.innerHTML = 1;
+                this.height = window.innerHeight;
+                this.startControl = true;
+                clearInterval(this.t);
+            }
+    }
+//    实例化一个类
+    var main=document.querySelector(".main");
+    var game=new Game(main,btn,score,state,lifeele,maxscore,paihang);
+
+//开始游戏
+    play.onclick=function(){
+        if(game.palycontrol){
+            game.start();
+        }
+    }
+</script>
+</html>

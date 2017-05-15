@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>练习轮播图和选项卡</title>
+</head>
+<body>
+	<script>
+	// 选项卡
+	const btn = $(".btn");
+	const con = $(".con");
+	
+	for(let i=0;i<btn.length;i++){
+		btn[i].onmouseover=function(){
+			for(let j=0;j<con.length;j++){
+				con[j].style.display="none";
+			}
+			con[i].style.display="block";
+		}
+		btn[i].onmouseout=function(){
+			con[i].style.display="none";
+		}
+	}
+
+
+
+
+	// 层级轮播图
+	const tu = $(".tu");
+	const banner = $(".bannerBox")[0];
+	const lis = $(".li");
+
+
+	tu[0].style.zIndex=1;
+	banner.style.background="red";
+	li[0].style.background="#fff";
+
+	// 轮播图时间间隔函数
+	var t = setInterval(move,1000);
+	var num=0;
+
+	// 轮播点的变化
+	for(let i=0;i<lis.length;i++){
+		li[i].onmouseover=function(){
+			for(let j=0;j<lis.length;j++){
+				tu[j].style.zIndex=1;
+				li[j].style.background="#fff";
+			}
+			li[i].style.background="orange";
+			tu[i].style.zIndex=2;
+			banner.style.background="green";
+			num=i;
+		}
+	}
+
+	// 轮播图lunbo函数
+	function move(){
+		num++;
+			if(num>tu.length-1){
+				num=0;
+			}
+		for(let i=0;i<tu.length;i++){
+			tu[i].style.zIndex=1;
+			li[i].style.background="orange";
+		}
+		tu[num].style.zIndex=2;
+		li[num].style.background="#fff";
+		banner[num].style.background="green";
+
+	}
+	banner.onmouseover=function(){
+		clearInterval(t);
+	}
+
+	banner.onmouseout=function(){
+		t = setInterval(move,1000);
+	}
+
+
+	// 左右轮播图
+	
+
+	</script>
+</body>
+</html>

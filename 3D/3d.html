@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            user-select: none;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .scene{
+            width: 100%;
+            height: 100%;
+            margin: auto;
+            /*景深*/
+            perspective: 500px;
+        }
+        .scene ul{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            text-align: center;
+            line-height: 100px;
+            font-size: 100px;
+        }
+        .scene ul li{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .scene ul li:nth-child(1){
+            /*background: rgba(255, 197, 211, 0.88);*/
+            background-image: url("img/timg.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            transform-origin: top;
+            transform: rotateX(90deg);
+        }
+        .scene ul li:nth-child(2){
+            /*background: blueviolet;*/
+            background-image: url("img/zhi.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            transform-origin: left;
+            transform: rotateY(-90deg);
+        }
+        .scene ul li:nth-child(3){
+            /*background: #ffff65;*/
+            background-image: url("img/tian.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            transform-origin: left bottom;
+            transform: rotateX(-90deg);
+        }
+        .scene ul li:nth-child(4){
+            /*background: #ef5bff;*/
+            background-image: url("img/zhi.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            transform-origin: right;
+            transform: rotateY(90deg);
+        }
+        .scene ul li:nth-child(5){
+            /*background: #7fe2ff;*/
+            background-image: url("img/zhi.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            transform: translate3d(0,0,100px);
+        }
+        .scene ul li:nth-child(6){
+            /*background: #ff5b94;*/
+            background-image: url("img/zhi.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+<div class="scene">
+    <ul class="box">
+        <li>上</li>
+        <li>左</li>
+        <li>下</li>
+        <li>右</li>
+        <li>前</li>
+        <li>
+            <!--back-->
+            <div class="container">
+                <video src="1.mp4"></video>
+                <div class="controls">
+                    <div class="start icon">
+                        &#xe6e3;
+                    </div>
+                    <div class="reload icon">
+                        &#xe70c;
+                    </div>
+                    <div class="progress">
+                        <div class="inner"></div>
+                    </div>
+                    <div class="time">
+                        <span id="now">00:00</span>
+                        <b>/</b>
+                        <span id="all">00:00</span>
+
+                    </div>
+                    <div class="volume">
+                        <span class="icon">&#xe757;</span>
+                        <div class="bg">
+                            <div class="vol">
+                                <div class="vol_inner"></div>
+                            </div>
+                            <div class="mask"></div>
+                        </div>
+                    </div>
+
+                    <div class="fullscreen icon">
+                        &#xe600;
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+</body>
+<script src="js/hover.js"></script>
+<script src="js/index.js"></script>
+<script>
+    var tops=document.querySelector("li:nth-child(1)");
+    var bottom=document.querySelector("li:nth-child(3)");
+    var front=document.querySelector("li:nth-child(5)");
+    var box=document.querySelector(".box");
+    var clientW=window.innerWidth;
+    var clientH=window.innerHeight;
+//    把原先的正方体上面/下面的面变成一个宽高都为屏幕宽的正方形
+    tops.style.width= clientW+"px";
+    tops.style.height=clientW+"px";
+//    console.log(tops.style.heigth)
+    bottom.style.width=clientW+"px";
+    bottom.style.height=clientW+"px";
+    bottom.style.top=clientH-clientW+"px";
+
+//    把前面的面放在背后
+    front.style.transform=`translateZ(${clientW}px) rotateY(180deg)`;
+//    把盒子往里放400px
+    box.style.transform="translateZ(-400px)";
+//    改变景深，让他小于屏幕的宽-400
+    box.style.transformOrigin="center center 500px";
+    var startangle=0;
+    var nowangle=0;
+    document.onmousedown=function (e) {
+        var sx=e.clientX;
+        document.onmousemove=function (e) {
+            var cx=e.clientX;
+            nowangle=cx-sx;
+            box.style.transform=`translateZ(-400px) rotateY(${startangle+nowangle}deg)`;
+        };
+        document.onmouseup=function (e) {
+            startangle+=nowangle;
+            document.onmousemove=null;
+            document.onmouseup=null;
+        }
+    }
+</script>
+<html>

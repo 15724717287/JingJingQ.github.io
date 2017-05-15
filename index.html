@@ -1,13 +1,211 @@
 <!doctype html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+<meta charset="utf-8">
+<title>高静个人主页</title>
+<link href="style/jquery.fullPage.css" rel="stylesheet" type="text/css">
+<link href="style/web.css" rel="stylesheet" type="text/css">
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.fullPage.min.js"></script>
+<script>
+$(function(){
+	$(".con").fullpage({
+		sectionsColor: ['#faca00', '#fbfbfb', '#fdfcf2', 'fffefb', '#f8f7f3'],
+		navigation:true,
+		navigationTooltips:['首页','About Me','技能展示','我的作品','GAMES',],
+		anchors:['one','two','three','four','five'],
+		menu:"#menu",
+		scrollOverflow:false
+	})	
+	
+})
+
+
+
+</script>
+
+
+
 </head>
+
 <body>
-<h1>hello</h1>
+
+<div class="header">
+	<div class="hd_con">
+		<a href="#" class="logo">Introduce</a>
+		<ul id="menu">
+                <li data-menuanchor="one"  class="active"><a href="#one" style="display:none;"></a></li>
+                <li data-menuanchor="two"><a href="#two">关于自己</a></li>
+                <li data-menuanchor="three" ><a href="#three">技能展示</a></li>
+                <li data-menuanchor="four" ><a href="#four">我的作品</a></li>
+                <li data-menuanchor="five" ><a href="#five">GAMES</a></li>
+         </ul>        
+   </div>
+</div>
+
+<div class="con">
+	<!--第1页-->
+	<section class="section" id="page1">
+    	<div class="bg"></div>
+    </section>
+    
+    <!--第2页-->
+    <section class="section" id="page2" style="overflow:hidden; height:100%;">
+    <div class="inner">
+    	<div class="bg"></div>
+        
+        <div class="left">
+        	<ul>
+            	<li>
+                    <img src="images/img1.png">
+                    </p>
+                </li>
+                <li>
+                    <img src="images/img2.png">
+                    </p>
+                </li>
+                <li>
+                    <img src="images/img3.png">
+                    </p>
+                </li>
+            </ul>
+            <div class="dream">梦想有一天可以背着吉他，浪迹天涯！生活恰恰是因为坚持了才会看到希望！</div>
+        </div>
+        
+        <div class="right">
+        	<h1>关于自己</h1>
+            姓名：高静<br/>
+            性别：女<br/>
+            爱好：敲代码<br/>
+            性格：外向开朗<br/>
+            <a href="#" style="text-decoration: none">我的首页</a>
+        </div>
+        </div>    
+    </section>
+    
+    
+    
+    <!--第3页-->
+    <section class="section" id="page3">
+    	<div class="bg"></div>
+        <div class="left">
+        	<ul>
+            	<li>
+                	<img src="images/img6.jpg" width="200px" height="220px">
+                </li>
+                <li>
+                    <img src="images/img7.jpg" width="200px" height="220px">
+                </li>
+                <li>
+                    <img src="images/img4.jpg" width="200px" height="220px">
+                </li>
+                <br/>
+                <li>
+                    <img src="images/img5.jpg" width="200px" height="220px">
+                </li>
+                <li>
+                    <img src="images/img8.jpg" width="200px" height="220px">
+                </li>
+                <!--<li>-->
+                    <!--<img src="images/img4.png" width="200px" height="200px">-->
+                <!--</li>-->
+
+            </ul>
+        </div>
+        <div class="right">
+        	<h1>技能展示</h1>
+            首要技能：javascript,html,css,jQuery<br/>
+            其他技能：PS,AI,3D-MAX<br/>
+            职业目标：前端工程师<br/>
+            <a href="#">我的首页</a>
+        </div>
+    </section>
+    
+    
+    <!--第4页-->
+    <section class="section" id="page4">
+    	<div class="bg"></div>
+        <div class="left">
+        	<ul>
+            	<li>
+                	<img src="images/fk.jpg" width="180px" height="180px">
+                    <!--<p>绽放2009</p>-->
+                </li>
+                <li>
+                	<img src="images/tm.jpg" width="180px" height="180px">
+                </li>
+                <li>
+                    <img src="images/jd.jpg" width="180px" height="180px">
+                </li>
+                <li>
+                    <img src="images/xm.jpg" width="180px" height="180px">
+                </li>
+                <br/>
+                <li>
+                    <img src="images/yd.jpg" width="180px" height="180px">
+                </li>
+                <li>
+                    <img src="images/yt.jpg" width="180px" height="180px">
+                </li>
+                <li>
+                    <img src="images/sf.jpg" width="180px" height="180px">
+                </li>
+                <li>
+                    <img src="images/lx.jpg" width="180px" height="180px">
+                </li>
+
+            </ul>
+        </div>
+        <div class="right">
+        	<h1>我的作品</h1>
+            网页:部分电商网站<br/>
+            <a href="">凡客</a><br/>
+            <a href="">天猫</a><br/>
+            <a href="">小米</a><br/>
+            <a href="">京东</a><br/>
+            <a href="">移动</a><br/>
+            <a href="">沙发</a><br/>
+            <a href="">银泰</a><br/>
+            <a href="">旅行</a><br/>
+            <a href="#">我的首页</a>
+        </div>
+    </section>
+    
+    
+    <!--第5页-->
+    <section class="section" id="page5">
+    	<div class="bg"></div>
+        <div class="left">
+        	<ul>
+            	<li>
+                	<img src="images/htb.jpg" width="300px" height="300px">
+                </li>
+                <li>
+                	<img src="images/bwl.jpg" width="300px" height="300px">
+                </li>
+                <br/>
+                <li>
+                	<img src="images/tcs.jpg" width="200px" height="200px">
+                </li>
+                <li>
+                    <img src="images/sl.jpg" width="200px" height="200px">
+                </li>
+                <li>
+                    <img src="images/img12.png" width="200px" height="200px">
+                </li>
+            </ul>
+        </div>
+        <div class="right">
+        	<h1>GAMES</h1>
+            <a href="">贪吃蛇小游戏</a><br/>
+            <a href="">打字游戏</a><br/>
+            <a href="">扫雷游戏</a> <br/>
+            <a href="">绘图画板</a><br/>
+            <a href="">备忘录</a><br/>
+            <a href="#">我的首页</a>
+        </div>
+    </section>
+</div>
+
 </body>
 </html>
