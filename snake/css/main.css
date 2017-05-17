@@ -8,24 +8,51 @@ html,body{
 	height: 100%;
 	position: relative;
 }
+.outer{
+	width: 820px;
+	height: 650px;
+	background: #fff;
+	margin: 0 352px;
+	border: 1px solid #CFDFEB;
+	border-radius: 8px;
+	margin-top: 10px;
+}
+.box{
+	width: 800px;
+	height: 630px;
+	background: #97E446;
+	margin: 11px 9px;
+	padding-top: 3px;
+}
+.border{
+	width: 613px;
+    height: 618px;
+    background: #fff;
+    border: 1px solid #000;
+    margin: 7px 5px;
+    border-radius: 5px;
+}
 .sence{
 	width: 600px;
 	height: 600px;
-	border: 1px solid #000;
-	position: absolute;
-	top:0;
+	/*border: 1px solid #000;*/
+	/*position: absolute;*/
+	/*top:0;
 	bottom: 0;
 	left: 0;
 	right: 0;
-	margin: auto;
+	margin: auto;*/
+	margin-top: 9px;
+	margin-left: 7px;
+
 }
 .gezi{
 	width: 30px;
 	height: 30px;
 	float: left;
-	background-color: #fff;
-	border-right: 1px solid #000;
-	border-bottom: 1px solid #000;
+	/*background-color: #fff;*/
+	border-right: 1px solid #fff;
+	border-bottom: 1px solid #fff;
 	box-sizing:border-box;
 }
 .gezi:nth-child(20n){
@@ -35,36 +62,180 @@ html,body{
 	border-bottom: 0;
 }
 .she{
-	background-color: green;
+	/*background-color: red!important;*/
+
+	background-image: url(../img/she1.png)!important;
+	background-repeat: no-repeat!important;
+	background-position: center!important;
+	background-size: cover!important;
+
+	
 }
 .food{
-	background-color: orange;
+	/*background-color: orange!important;*/
+	background-image: url(../img/3.gif)!important;
+	background-repeat: no-repeat!important;
+	background-position: center!important;
+	background-size: contain!important;
 }
 .fenshu{
 	position: fixed;
-	right: 50%;
-	margin-right: -600px;
-	width: 200px;
-	height: 300px;
-	border: 1px solid #000;
-	top:100px;
+    right: 50%;
+    margin-right: -474px;
+    width: 150px;
+    height: 573px;
+    background: #fff;
+    border: 1px solid #000;
+    top: 32px;
 }
-.fenshu .zuigaofen span{
+.fenshu span{
+	display: block;
+	width: 133px;
+	height: 33px;
 	color: orange;
+	text-align: center;
+	line-height: 33px;
+	font-size: 24px!important;
+	font-weight: 700;
+	
+}
+.fenshu .zuigaofen,.fenshu .defen{
+	width: 133px;
+	height: 66px;
+	border: 1px solid #000;
+	margin: 50px auto;
+	border-radius: 5px;
+}
+.text1,.text2{
+	width: 133px;
+	height: 32px;
+	border-bottom: 1px solid #000;
+	line-height: 32px;
+	text-align: center;
+	color:#fff;
+	font-size: 20px;
+}
+.text1{
+	background: #E54D98;
+}
+.text2{
+	background: #3AD9C7;
 }
 .fenshu .defen span{
 	color: orange;
 }
-.start1{
-	position: fixed;
-	left: 280px;
-	top:16px;
-	width: 80px;
+.start1,.exit,.replay{
+	/*position: fixed;*/
+	/*left: 280px;*/
+	/*top:16px;*/
+	width: 133px;
 	height: 30px;
+	margin: 0 auto;
+	border-radius: 20px;
 	border: 1px solid #000;
-	color: #000;
-	font-size: 12px;
+	color: #fff;
+	font-size: 20px;
+	font-weight: 700;
 	text-align: center;
 	line-height: 30px;
+	cursor: pointer;
+	background: #B279D8;
+	margin-bottom: 50px;
+}
+.exit{
+	background: #F7DE00;
+}
+.replay{
+	background: #7ED620;
+}
+.start{
+	width: 100%;
+	height: 100%;
+	background-image: url(../img/s.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	position: absolute;
+	top: 0px;
+    left: 90px;
+}
+.play{
+	width: 170px;
+	height: 100px;
+	position: absolute;
+	bottom: -2px;
+    right: 545px;
+	background-image: url(../img/play.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	transition: all 0.5s;
+}
+.play:hover{
+	width: 200px;
+	height: 130px;
+}
+.introduce:hover{
+	width: 170px;
+	height: 100px;
+}
+
+.introduce{
+	width: 150px;
+	height: 80px;
+	position: absolute;
+	bottom:138px;
+	right: 385px;
+	background-image: url(../img/intro.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	transition: all 0.5s;
+}
+.jieshao{
+	width: 196px;
+    height: 123px;
+    border: 1px solid #000;
+    position: absolute;
+    bottom: 68px;
+    right: -120px;
+    line-height: 30px;
+    opacity: 0;
+    padding: 5px;
+}
+.introduce:hover .jieshao{
+	opacity: 1;
+}
+.gameover{
+	width: 300px;
+	height: 300px;
+	background:#F7DE00 ;
+	line-height: 100px;
+	text-align: center;
+	position: absolute;
+	top:0;
+    bottom: 0;
+	left:0;
+	right: 0;
+	margin:auto;
+	display: none;
+
+}
+.gameover p{
+	font-size: 30px;
+	color: #fff;
+	font-weight: 700;
+}
+.tuichu,.restart{
+	width: 80px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	border: 1px solid #000;
+	border-radius: 10px;
+	margin:0 auto;
+	margin-bottom: 10px;
 	cursor: pointer;
 }

@@ -6,17 +6,47 @@
 	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-	<div class="sence">	</div>
+	<div class="outer">
+	<div class="box">
+	<div class="border">
+		<div class="sence">	</div>
+	</div>
 	<div class="fenshu">
 		<div class="zuigaofen">
-			最高分：<span>0</span>
+			<div class="text1">最高分</div>
+			<span>0</span>
 		</div>
 		<div class="defen">
-			得分：<span>0</span>
+			<div class="text2">得分</div>
+			<span>0</span>
 		</div>
-	</div>	
-	<div class="start1">暂停</div>
 
+		<div class="start1">暂停</div>
+		<div class="replay">重新开始</div>
+		<div class="exit">退出游戏</div>
+		
+	</div>	
+	
+</div>
+<div class="start">
+	<div class="play"></div>
+	<div class="introduce">
+		<div class="jieshao">
+		<p><b>游戏目标：</b>吃到更多的水果<br/>
+		   <b>如何开始：</b>点击PLAY开关<br/>
+		   <b>操作指南：</b>上下左右方向键控制蛇的移动方向</p>
+	</div>
+	</div>
+	
+</div>
+<div class="gameover">
+	<p>GAME OVER</p>
+	<b>您的得分：</b><span class="myscore">0</span>
+	<b>最高分：</b><span class="bestscore">0</span>
+	<div class="tuichu">退出游戏</div>
+	<div class="restart">重新开始</div>
+</div>
+</div>
 	<script src="js/function.js"></script>
 	<script src="js/tanchishe.js"></script>
 </body>

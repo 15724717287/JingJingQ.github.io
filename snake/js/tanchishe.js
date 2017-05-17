@@ -3,7 +3,16 @@ $(function(){
 	const zuigaofen=$(".zuigaofen span")[0];
 	const defen=$(".defen span")[0];
 	const start1=$(".start1")[0];
-	let Snake1 = new Snake(sence,zuigaofen,defen,start1);
+	const playstart=$(".play")[0];
+	const startgame=$(".start")[0];
+	const replay=$(".replay")[0];
+	const exit=$(".exit")[0];
+	const myscore=$(".myscore")[0];
+	const bestscore=$(".bestscore")[0];
+	const gameovers=$(".gameover")[0];
+	const tuichu=$(".tuichu")[0];
+	const restart=$(".restart")[0];
+	let Snake1 = new Snake(sence,zuigaofen,defen,start1,playstart,startgame,replay,exit,myscore,bestscore,gameovers,tuichu,restart);
 })
 
 
@@ -29,7 +38,7 @@ $(function(){
 
 class Snake{
 
-	constructor(sence,zuigaofen,defen,start1){
+	constructor(sence,zuigaofen,defen,start1,playstart,startgame,replay,exit,myscore,bestscore,gameovers,tuichu,restart){
 		this.sence=sence;
 		this.zuigaofen=zuigaofen;
 		this.defen=defen;
@@ -41,7 +50,21 @@ class Snake{
 		this.shekeyflag=true;
 		// this.zhuangtai=true;
 		this.fenshu=0;
-		this.play();
+		this.playstart=playstart;
+		this.startgame=startgame;
+		this.replay=replay;
+		this.exit=exit;
+		this.myscore=myscore;
+		this.bestscore=bestscore;
+		this.gameovers=gameovers;
+		this.tuichu=tuichu;
+		this.restart=restart;
+		let that=this;
+		this.playstart.onclick=function(){
+			that.startgame.style.display="none";
+			that.play();
+		}
+		
 	}
 
 	play(){
@@ -63,6 +86,21 @@ class Snake{
 		// 创建食物
 		this.createfood();
 		this.pause();
+		this.replayer();
+		this.exiter();
+	}
+	replayer(){
+		let that=this;
+		this.replay.onclick=function(){
+			that.play();
+		}
+	}
+	exiter(){
+		let that=this;
+		this.exit.onclick=function(){
+			clearInterval(that.t);
+			that.startgame.style.display="block";
+		}
 	}
 	pause(){
 		let zhuangtai=true;
@@ -89,6 +127,18 @@ class Snake{
 				gezi.id=`${i}-${j}`;
 				gezi.classList.add("gezi");
 				this.sence.appendChild(gezi);
+				if(i%2==0&&j%2==0){
+					gezi.style.background="#C0EE68";
+				}
+				if(i%2==0&&j%2!=0){
+					gezi.style.background="#A8EA66";
+				}
+				if(i%2!=0&&j%2==0){
+					gezi.style.background="#C0EE68";
+				}
+				if(i%2!=0&&j%2!=0){
+					gezi.style.background="#D8F26D";
+				}
 			}
 		}
 	}
@@ -209,6 +259,10 @@ class Snake{
 		this.foodw.x=Math.floor(Math.random()*20);
 		this.foodw.y=Math.floor(Math.random()*20);
 		this.getElement(this.foodw).classList.add("food");
+		// var n=Math.floor(Math.random()*3);
+		this.getElement(this.foodw).style.backgroundImage="url('../img/n.gif')!important";
+		// console.log(this.getElement(this.foodw).style.backgroundImage="url('../img/n.gif')!important")
+
 	}
 
 	changefenshu(){
@@ -224,6 +278,19 @@ class Snake{
 		this.changefenshu();
 		// localStorage.zuigaofen=this.maxfen;
 		clearInterval(this.t);
+		this.gameovers.style.display="block";
+		this.myscore.innerHTML=this.fenshu;
+		this.bestscore.innerHTML=this.maxfen;
+		let that=this;
+		this.tuichu.onclick=function(){
+			clearInterval(that.t);
+			that.startgame.style.display="block";
+			that.gameovers.style.display="none";
+		}
+		this.restart.onclick=function(){
+			that.gameovers.style.display="none";
+			that.play();
+		}
 	}
 
 }

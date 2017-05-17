@@ -151,7 +151,7 @@
 	float:left;}
 .header ul{ float:left; margin-left:40px;}
 .header li{ float:left;}
-.header ul li a{ font-size:14px; display:block; padding:0 20px; line-height:60px; color:#fff;}
+.header ul li a{ font-size:18px; display:block; padding:0 20px; line-height:60px; color:#fff;}
 .header ul li a:hover,.header ul li.active a{ background:rgb(250,186,0); color:#333;}
 .section{ position: relative; overflow:hidden;}
 
