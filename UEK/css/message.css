@@ -1,0 +1,143 @@
+.header_boxcontent ul li span{
+	display: block;
+    width: 100%;
+    height: 0.05rem;
+    background: #fff;
+    position: absolute;
+    left: 2.46rem;
+    bottom: 0;
+}
+.xinwen{
+	display: block;
+    margin-top: 0.17rem;
+}
+.xinwen h2{
+	font-size: 0.14rem;
+    color: #000;
+    font-weight: normal;
+    margin-bottom: 0.11rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.xinwen_neirong{
+	height: 0.89rem;
+    border-bottom: 1px solid #b8b8b8;
+    padding-bottom: 0.08rem;
+}
+.xinwen_pic{
+	width: 1.13rem;
+    height: 0.97rem;
+    float: left;
+    position: relative;
+}
+.beijingk{
+	width: 1.06rem;
+    height: 0.8rem; 
+    background-image: url(../img/k.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    float: right;
+
+}
+.xinwen_pic img{
+	display: block;
+	width: 1.06rem;
+    height: 0.80rem;
+    position: absolute;
+    top: 0.08rem;
+    left: 0;
+
+}
+.description{
+	float: right;
+    width: 2.3rem;
+    height: 0.77rem;
+    font-size: 0.12rem;
+    color: #494747;
+    line-height: 0.18rem;
+    overflow: hidden;
+    margin-right: 0.05rem;
+}
+.xinwen_liulan{
+	width: 100%;
+	height: 0.3rem;
+    border-bottom: 1px solid #b8b8b8;
+}
+.time{
+	width: 1.15rem;
+    float: left;
+}
+.time i{
+	display: inline-block;
+    width: 0.17rem;
+    height: 0.17rem;
+    margin-top: 0.07rem;
+    margin-left: 0.03rem;
+    float: left;
+    margin-right: 0.03rem;
+	background-image: url(../img/bj.png);
+	background-repeat: no-repeat;
+	background-position: -0.19rem 0;
+	background-size: cover;
+}
+.time span{
+	font-size: 0.1rem;
+    float: left;
+    margin-top: 0.07rem;
+    color: #666;
+}
+.click{
+	width: 1.32rem;
+    float: left;
+    margin-left: 0.15rem;
+}
+.click i{
+	display: inline-block;
+    width: 0.17rem;
+    height: 0.17rem;
+    margin-top: 0.07rem;
+    float: left;
+    margin-right: 0.03rem;
+    background-image: url(../img/bj.png);
+	background-repeat: no-repeat;
+	background-position: -0.19rem 0;
+	background-size: cover;
+}
+.click span{
+	font-size: 0.1rem;
+    float: left;
+    margin-top: 0.07rem;
+    color: #666;
+}
+.share{
+	width: 1rem;
+    float: right;
+    overflow: hidden;
+
+}
+.share i{
+	display: inline-block;
+    width: 0.17rem;
+    height: 0.17rem;
+    margin-top: 0.07rem;
+    float: left;
+    margin-right: 0.03rem;
+    background-image: url(../img/bj.png);
+	background-repeat: no-repeat;
+	background-position: -0.19rem 0;
+	background-size: cover;
+}
+.share span{
+	font-size: 0.1rem;
+    float: left;
+    margin-top: 0.07rem;
+    color: #666;
+}
+.fanye{
+	margin-top: 0.1rem;
+}
+.banquan{
+	padding-bottom: 0.5rem;
+}

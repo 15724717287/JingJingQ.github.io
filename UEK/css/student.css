@@ -1,0 +1,40 @@
+.header_boxcontent ul li span{
+	display: block;
+    width: 100%;
+    height: 0.05rem;
+    background: #fff;
+    position: absolute;
+    left: 1.64rem;
+    bottom: 0;
+}
+.teacher_pic{
+	width: 1.06rem;
+    height: 0.71rem;
+    margin-top: 0.08rem;
+    overflow: hidden;
+    float: left;
+}
+.teacher_introduce{
+	float: left;
+	margin-left: 0.18rem;
+}
+.teacher_name h2{
+	float: left;
+    font-size: 0.13rem;
+    font-weight: normal;
+    color: #000;
+}
+.teacher_name span{
+	float: left;
+    font-size: 0.09rem;
+    color: #444;
+    margin-left: 0.05rem;
+}
+.daiyu{
+	width: 100%;
+    font-size: 0.12rem;
+    color: #94d43b;
+}
+.banquan{
+	padding-bottom: 0.5rem;
+}

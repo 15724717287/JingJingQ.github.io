@@ -1,0 +1,455 @@
+.header{
+	width: 100%;
+	height: 0.49rem;
+	background-color: #007be3;
+	position: fixed;
+	z-index: 1000;
+	overflow: hidden;
+	position: relative;
+}
+.header_box{
+	width: 1.25rem;
+    height: 0.46rem;
+    margin: 0 auto;
+    padding-top: 0.10rem;
+}
+.header_box a{
+	display: block;
+	width: 0.38rem;
+    height: 0.36rem;
+    float: left;
+    background-image: url(../img/logo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+.header_box h3{
+	width: 0.59rem;
+	height: 0.37rem;
+	color: #fff;
+	font-size: 0.18rem;
+	float: left;
+	line-height: 0.37rem;
+	margin-left: 0.16rem;
+}
+
+.banner{
+	width: 100%;
+	height: 2.32rem;
+	position: relative;
+	overflow: hidden;
+}
+.banner_box{
+	width: 100%;
+	height: 2.32rem;
+	margin: 0 auto;
+	background-image: url(../img/banner.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+.banner_lunbo{
+	width: 100%;
+	position: relative;
+}
+.lunbo1{
+	width: 25%;
+	height: 0.04rem;
+	position: absolute;
+	bottom: 0px;
+	background-color: #ff8d12;
+}
+.content{
+	width: 100%;
+	/*height: 2.67rem;*/
+	padding: 0.1rem 0.08rem;
+	box-sizing: border-box;
+	overflow: hidden;
+	background-color: #f5f6fa;
+	color: #000;
+}
+.content ul{
+	display: flex;
+	height: 1.08rem;
+	margin-bottom: 0.08rem;
+	/*margin-top: 0.2rem;*/
+}
+.content ul li{
+	width: 0.85rem;
+    /*height: 1.08rem;*/
+    float: left;
+    flex-grow:1;
+    margin-right: 0.08rem;
+    margin-left: 0.08rem;
+    margin-bottom: 0.16rem;
+    text-align: center;
+    font-size: 0.12rem;
+    color: #000;
+    background-color: #fff;
+    border-radius: 0.16rem;
+    position: relative;
+}
+.content ul li a{
+	display: block;
+	margin-top: 0.95rem;
+	margin-bottom: 0.95rem;
+	font-weight: 500;
+	overflow: hidden;
+	color: #000;
+}
+.icon{
+	width: 0.57rem;
+	height: 0.57rem;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left:0;
+	right: 0;
+	margin: auto auto ;
+	border: 1px solid #fff;
+	/*z-index: 1000;*/
+	background-image: url(../img/ui.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+.icon1{
+	width: 0.57rem;
+	height: 0.57rem;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left:0;
+	right: 0;
+	margin: auto auto ;
+	border: 1px solid #fff;
+	/*z-index: 1000;*/
+	background-image: url(../img/h5.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+.icon2{
+	width: 0.57rem;
+	height: 0.57rem;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left:0;
+	right: 0;
+	margin: auto auto ;
+	border: 1px solid #fff;
+	/*z-index: 1000;*/
+	background-image: url(../img/php.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+.icon3{
+	width: 0.57rem;
+	height: 0.57rem;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left:0;
+	right: 0;
+	margin: auto auto ;
+	border: 1px solid #fff;
+	/*z-index: 1000;*/
+	background-image: url(../img/qzkf.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+.icon4{
+	width: 0.57rem;
+	height: 0.57rem;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left:0;
+	right: 0;
+	margin: auto auto ;
+	border: 1px solid #fff;
+	/*z-index: 1000;*/
+	background-image: url(../img/sz.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+.icon5{
+	width: 0.57rem;
+	height: 0.57rem;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left:0;
+	right: 0;
+	margin: auto auto ;
+	border: 1px solid #fff;
+	/*z-index: 1000;*/
+	background-image: url(../img/mt.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+.icon6{
+	width: 0.57rem;
+	height: 0.57rem;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left:0;
+	right: 0;
+	margin: auto auto ;
+	border: 1px solid #fff;
+	/*z-index: 1000;*/
+	background-image: url(../img/xy.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+.icon7{
+	width: 0.57rem;
+	height: 0.57rem;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left:0;
+	right: 0;
+	margin: auto auto ;
+	border: 1px solid #fff;
+	/*z-index: 1000;*/
+	background-image: url(../img/bz.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+.server{
+	width: 100%;
+    background-color: #fff;
+}
+.server_title{
+	width: 100%;
+    height: 0.35rem;
+    border-bottom: 1px solid #e8e8e8;
+    text-align: center;
+    line-height: 0.35rem;
+    font-size: 0.14rem;
+    color: #1378ba;
+}
+.server_col-1{
+	display: flex;
+	height: 1rem;
+	border-bottom:1px solid #e8e8e8; 
+
+}
+.server_col-1 li{
+	width: 50%;
+	height: 100%;
+	float: left;
+    flex-grow:1;
+    background-color: #fff;
+    border-left: 1px solid #e8e8e8; 
+    padding: 0.16rem 0rem 0.24rem 0.08rem;
+    box-sizing: border-box;
+    
+}
+.server_col-1 li a{
+	display: block;
+}
+.server_left{
+	width: 0.9rem;
+    float: left;
+    height: 100%;
+    margin-left: 0.05rem;
+
+}
+.server_left h2{
+	font-size: 0.14rem;
+	color: #000;
+}
+.server_left h3{
+	font-size: 0.12rem;
+	color: #999;
+}
+.server_right{
+	width: 0.86rem;
+    height: 0.78rem;
+    float: left;
+    background-image: url(../img/jk.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.server_col-2{
+	display: flex;
+	height: 0.89rem;
+	border-bottom:1px solid #e8e8e8; 
+}
+.server_col-2 li{
+	float: left;
+    width: 33.33%;
+    height: 100%;
+    border-right: 1px solid #e8e8e8;
+    padding: 0.2rem 0 0.09rem 0.1rem;
+    box-sizing: border-box;
+}
+.server_col-2 li a{
+	display: block;
+}
+.server_col-2_left{
+	float: left;
+	width: 0.33rem;
+	height: 0.33rem;
+	background-image: url(../img/tu.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+.server_col-2_right{
+	float: left;
+	width: 0.8rem;
+	height: 100%;
+	margin-left: 0.07rem;
+}
+.server_col-2_right h2{
+	font-size: 0.14rem;
+	color: #000;
+}
+.server_col-2_right h3{
+	font-size: 0.10rem;
+	color: #999;
+}
+.footer{
+	width: 100%;
+    height: 0.49rem;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    margin-top: 0.1rem;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 999;
+}
+.concact{
+	width: 100%;
+    height: 100%;
+    background: #e7e7e7;
+}
+.shiting{
+	display: block;
+	width: 33.33%;
+    height: 100%;
+    float: left;
+}
+.boda{
+	display: block;
+	width: 33.33%;
+    height: 100%;
+    float: left;
+}
+.goutong{
+	display: block;
+	width: 33.33%;
+    height: 100%;
+    float: left;
+}
+.part1{
+	width: 100%;
+    height: 100%;
+    font-size: 0.12rem;
+    color: #000;
+    text-align: left;
+    line-height: 0.45rem;
+    background: #e7e7e7;
+}
+.part1 i{
+	width: 0.16rem;
+    height: 0.16rem;
+	background: url(../img/qq.png);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	float: left;
+    line-height: 0.45rem;
+    margin-top: 0.14rem;
+    margin-left: 0.13rem;
+}
+.part1 span{
+	float: left;
+    font-size: 0.14rem;
+    margin-left: 0.1rem;
+}
+.part2{
+	width: 100%;
+    height: 100%;
+	background-color: #ff8d12;
+    border-radius: 0.04rem;
+    color: #fff;
+    text-align: center;
+    margin-top: -0.05rem;
+    box-shadow: 0px 0px 0.07rem #ff8d12;
+}
+.part2 i{
+	float: left;
+	width: 0.18rem;
+    height: 0.18rem;
+    background-image: url(../img/dh.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: inline-block;
+    line-height: 0.28rem;
+    margin-left: 0.18rem;
+    margin-top: 0.15rem;
+}
+.part2 span{
+	float: left;
+    font-size: 0.14rem;
+    font-weight: bold;
+    margin-top: 0.15rem;
+    margin-left: 0.10rem;
+}
+.part3 {
+	width: 100%;
+    height: 100%;
+    font-size: 0.12rem;
+    color: #000;
+    text-align: right;
+    line-height: 0.45rem;
+    background: #e7e7e7;
+}
+.part3 i{
+	width: 0.16rem;
+    height: 0.16rem;
+	background: url(../img/xx.png);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	float: left;
+    line-height: 0.45rem;
+    margin-top: 0.14rem;
+    margin-left: 0.13rem;
+}
+.part3 span{
+	float: left;
+    font-size: 0.14rem;
+    margin-left: 0.1rem;
+}
+.banquan{
+	width: 100%;
+    height: 0.66rem;
+    font-size: 0.15rem;
+    overflow: hidden;
+}
+.banquan p{
+	color: #666;
+    font-size: 0.1rem;
+    text-align: center;
+    padding-top: 0.09rem;
+    box-sizing: border-box;
+}
+.banquan{
+	padding-bottom: 0.5rem;
+}

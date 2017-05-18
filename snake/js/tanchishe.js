@@ -59,6 +59,8 @@ class Snake{
 		this.gameovers=gameovers;
 		this.tuichu=tuichu;
 		this.restart=restart;
+		// 建场景
+		this.createSence();
 		let that=this;
 		this.playstart.onclick=function(){
 			that.startgame.style.display="none";
@@ -75,8 +77,8 @@ class Snake{
 			this.maxfen=0;
 			this.zuigaofen.innerHTML=this.maxfen;
 		}
-		// 建场景
-		this.createSence();
+		// // 建场景
+		// this.createSence();
 		// 2.根据蛇的信息创建蛇
 		this.createShe();
 		// 蛇跑
@@ -92,13 +94,44 @@ class Snake{
 	replayer(){
 		let that=this;
 		this.replay.onclick=function(){
-			that.play();
-		}
+			clearInterval(that.t);
+			for(let i=0;i<that.she.length;i++){
+				that.getElement(that.she[i]).classList.remove("she");
+			}
+			that.getElement(that.foodw).classList.remove("food");
+			that.defen.innerHTML=0;
+			that.fenshu=0;
+			if(that.maxfen<that.fenshu){
+				that.maxfen=that.fenshu;
+				that.zuigaofen.innerHTML=that.fenshu;
+				localStorage.zuigaofen=that.maxfen;
+			}
+			// 2.根据蛇的信息创建蛇
+			that.she=[{x:0,y:0},{x:0,y:1},{x:0,y:2}];
+			// 蛇跑
+			that.shemove();
+			// 控制蛇
+			that.controlshe();
+			// 创建食物
+			that.createfood();
+			}
 	}
 	exiter(){
 		let that=this;
 		this.exit.onclick=function(){
 			clearInterval(that.t);
+			for(let i=0;i<that.she.length;i++){
+				that.getElement(that.she[i]).classList.remove("she");
+			}
+			that.getElement(that.foodw).classList.remove("food");
+			that.defen.innerHTML=0;
+			that.fenshu=0;
+			if(that.maxfen<that.fenshu){
+				that.maxfen=that.fenshu;
+				that.zuigaofen.innerHTML=that.fenshu;
+				localStorage.zuigaofen=that.maxfen;
+			}
+			that.she=[{x:0,y:0},{x:0,y:1},{x:0,y:2}];
 			that.startgame.style.display="block";
 		}
 	}
@@ -283,14 +316,26 @@ class Snake{
 		this.bestscore.innerHTML=this.maxfen;
 		let that=this;
 		this.tuichu.onclick=function(){
-			clearInterval(that.t);
+			that.gameovers.style.display="none";
 			that.startgame.style.display="block";
-			that.gameovers.style.display="none";
+			clearInterval(that.t);
+			for(let i=0;i<that.she.length;i++){
+				that.getElement(that.she[i]).classList.remove("she");
+			}
+			that.getElement(that.foodw).classList.remove("food");
+			that.defen.innerHTML=0;
+			that.fenshu=0;
+			if(that.maxfen<that.fenshu){
+				that.maxfen=that.fenshu;
+				that.zuigaofen.innerHTML=that.fenshu;
+				localStorage.zuigaofen=that.maxfen;
+			}
+			that.she=[{x:0,y:0},{x:0,y:1},{x:0,y:2}];
 		}
-		this.restart.onclick=function(){
-			that.gameovers.style.display="none";
-			that.play();
-		}
+		// this.restart.onclick=function(){
+		// 	that.gameovers.style.display="none";
+		// 	that.replayer();
+		// }
 	}
 
 }

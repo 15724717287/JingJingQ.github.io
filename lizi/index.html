@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        canvas{
+            background-color: #00001d;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="500" height="500"></canvas>
+    <script>
+        window.onload=function () {
+//            创建画布
+            let canvas = document.querySelector("canvas");
+//            创建画笔
+            let cobj = canvas.getContext("2d");
+            let x=200;
+            let y=200;
+            canvas.onmousemove=function (e) {
+                x=e.offsetX;
+                y=e.offsetY;
+            }
+//            类
+            class lizi {
+                constructor(canvas, cobj) {
+                    this.canvas = canvas;
+                    this.cobj = cobj;
+                    this.x =x;
+                    this.y = y;
+                    this.r = 20*Math.random()+3;
+                    this.speedx=6*Math.random()-2;
+                    this.speedy=-10;
+                    this.g=0.3;
+                    this.color=`rgba(${parseInt(255*Math.random())},${parseInt(255*Math.random())},${parseInt(255*Math.random())},${Math.random()})`;
+                }
+                draw() {
+//                    保存画布
+                    this.cobj.save();
+//                    开始
+                    this.cobj.beginPath();
+
+//                    平移
+                    this.cobj.translate(this.x, this.y);
+//                    画圆弧（0-2π）
+                    this.cobj.arc(0,0,this.r,0,Math.PI*2);
+//                    填充
+                    this.cobj.fillStyle=this.color;
+                    this.cobj.fill();
+//                    恢复
+                    this.cobj.restore();
+                }
+                update(){
+                    this.x+=this.speedx;
+                    this.speedy+=this.g;
+                    this.y+=this.speedy;
+                }
+            }
+//            实例化类
+            let arr=[];
+            let t=setInterval(function () {
+                cobj.clearRect(0,0,500,500);
+                let liziobj=new lizi(canvas, cobj);
+                arr.push(liziobj);
+                for(let i=0;i<arr.length;i++){
+                    arr[i].draw();
+                    arr[i].update();
+                }
+                if(arr.length>=200){
+                    arr.shift();
+                }
+            },50)
+        }
+    </script>
+</body>
+</html>
